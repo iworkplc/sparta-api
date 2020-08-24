@@ -16,3 +16,5 @@ properties:
   updated_at:
     type: string
     format: date-time
+  company:
+    $ref: ./Company.v1.yaml
