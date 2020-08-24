@@ -1,0 +1,27 @@
+title: Partner
+type: object
+x-examples:
+  example-1: {}
+properties:
+  id:
+    type: integer
+    format: int64
+  name:
+    type: string
+  debit_limit:
+    type: number
+  email:
+    type: string
+  type:
+    type: string
+  tin_number:
+    type: integer
+    format: int64
+  city:
+    type: string
+  sub_city:
+    type: string
+  wereda:
+    type: string
+  # company: reference of company
+    

@@ -1,0 +1,18 @@
+title: PaymentTerm
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  # invoice:
+  #     $ref: '#/definitions/Invoice'
+  name:
+    type: string
+  note:
+    type: string
+  created_at:
+    type: string
+    format: timestamp
+  updated_at:
+    type: string
+    format: timestamp
