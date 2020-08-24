@@ -1,0 +1,19 @@
+title: Period
+type: object
+properties:
+  id:
+    type: integer
+  fiscal_year_id:
+    type: integer
+  state: 
+    type: string
+  name:
+    type: string
+  code:
+    type: string
+  start_date:
+    type: string
+  # company:
+  #   $ref: '#/definitions/Company'
+  # fiscal_year:
+  #   $ref: '#/definitions/Period'

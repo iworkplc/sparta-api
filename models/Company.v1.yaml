@@ -21,12 +21,8 @@ properties:
     type: string
   street:
     type: string
-  created_at:
-    type: string
-    format: timestamp
-  updated_at:
-    type: string
-    format: timestamp
+  country:
+    $ref: ./Country.v1.yaml
 required:
   - id
   - name

@@ -1,0 +1,27 @@
+title: InvoiceLine
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  price_subtotal:
+    type: string
+  source_origin:
+    type: string
+  unit_of_measurement:
+    type: string
+  quantity:
+    type: integer
+  unit_price:
+    type: number
+  discount:
+    type: number
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  company:
+    $ref: ./Company.v1.yaml

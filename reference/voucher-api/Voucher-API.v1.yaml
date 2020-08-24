@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: Voucher API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /voucher-lines:
+    get:
+      summary: Fetchs all voucher lines
+      tags:
+        - voucher-line
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/VoucherLine.v1.yaml
+      operationId: get-voucher-lines
+    post:
+      summary: ''
+      operationId: post-voucher-lines
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/VoucherLine.v1.yaml
+      description: Create a voucher line
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+components:
+  schemas: {}

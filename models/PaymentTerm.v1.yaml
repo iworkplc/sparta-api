@@ -1,21 +1,18 @@
-title: Country
+title: PaymentTerm
 type: object
-x-tags:
-  - country
 properties:
   id:
     type: integer
+    format: int64
+  # invoice:
+  #     $ref: '#/definitions/Invoice'
   name:
     type: string
-  code:
+  note:
     type: string
   created_at:
     type: string
-    format: date-time
+    format: timestamp
   updated_at:
     type: string
-    format: date-time
-required:
-  - id
-  - name
-  - code
+    format: timestamp
