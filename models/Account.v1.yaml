@@ -1,0 +1,33 @@
+title: Account
+type: object
+properties:
+  id:
+    type: integer
+  company:
+    $ref: ./Company.v1.yaml
+  normal_balance:
+    type: string
+  reconcile:
+    type: string
+  description:
+    type: string
+  name:
+    type: string
+  is_active:
+    type: boolean
+  code:
+    type: integer
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  account_type:
+    $ref: ./AccountType.v1.yaml
+  parent_account:
+    $ref: ./Account.v1.yaml
+required:
+  - id
+  - name
+  - is_active

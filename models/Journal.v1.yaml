@@ -1,0 +1,25 @@
+title: Journal
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  entry_posted:
+    type: string
+  code:
+    type: string
+  type:
+    type: string
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  currency:
+    $ref: ./Currency.v1.yaml
+  company:
+    $ref: ./Company.v1.yaml
+x-tags:
+  - Journal

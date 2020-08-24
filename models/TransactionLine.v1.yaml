@@ -1,0 +1,37 @@
+title: TransactionLine
+type: object
+properties:
+  id:
+    type: integer
+  date:
+    type: string
+    format: date
+  name:
+    type: string
+  state:
+    type: string
+  debit:
+    type: integer
+  due_date:
+    type: string
+    format: date
+  tax_amount:
+    type: integer
+  credit:
+    type: integer
+  company:
+    $ref: ./Company.v1.yaml
+  currency:
+    $ref: ./Currency.v1.yaml
+  tax_code:
+    $ref: ./TaxCode.v1.yaml
+  tax:
+    $ref: ./Tax.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+x-tags:
+  - TransactionLine
