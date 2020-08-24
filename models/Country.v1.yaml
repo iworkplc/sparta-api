@@ -18,4 +18,3 @@ properties:
 required:
   - id
   - name
-  - code
