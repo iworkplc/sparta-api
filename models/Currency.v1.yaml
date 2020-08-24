@@ -1,0 +1,29 @@
+title: Currency
+type: object
+x-examples:
+  example-1: {}
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+  symbol:
+    type: string
+  accuracy:
+    type: integer
+    format: int64
+  rounding_factor:
+    type: number
+  created_at:
+    type: string
+    format: date
+  updated_at:
+    type: string
+    format: date
+  company:
+    $ref: ./Company.v1.yaml
+required:
+  - name
+  - symbol
+  - accuracy
+  - rounding_factor

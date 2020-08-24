@@ -1,0 +1,17 @@
+title: CurrencyRate
+type: object
+properties:
+  id:
+    type: string
+  rate:
+    type: number
+  created_at:
+    type: string
+    format: date
+  updated_at:
+    type: string
+    format: date
+  currency:
+    $ref: ./Currency.v1.yaml
+required:
+  - rate

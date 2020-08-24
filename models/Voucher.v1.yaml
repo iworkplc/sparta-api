@@ -1,0 +1,43 @@
+title: Voucher
+type: object
+properties:
+  id:
+    type: string
+  date:
+    type: string
+    format: date
+  due_date:
+    type: string
+    format: date
+  state:
+    type: string
+  reference:
+    type: string
+  name:
+    type: string
+  amount:
+    type: number
+  created_at:
+    type: string
+    format: timestamp
+  updated_at:
+    type: string
+    format: timestamp
+  currency:
+    $ref: /Currency.v1.yaml
+  tax:
+    $ref: ./Tax.v1.yaml
+  period:
+    $ref: ./Period.v1.yaml
+  account:
+    $ref: ./Account.v1.yaml
+  company:
+    $ref: ./Company.v1.yaml
+  partner:
+    $ref: ./Partner.v1.yaml
+required:
+  - date
+  - due_date
+  - name
+  - amount
+description: ''

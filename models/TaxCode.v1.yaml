@@ -1,0 +1,20 @@
+title: TaxCode
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  name:
+    type: string
+  created_at:
+    type: string
+    format: date
+  updated_at:
+    type: string
+    format: date
+  company:
+    $ref: ./Company.v1.yaml
+required:
+  - code
+  - name
