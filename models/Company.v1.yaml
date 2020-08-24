@@ -21,6 +21,12 @@ properties:
     type: string
   street:
     type: string
+  created_at:
+    type: string
+    format: timestamp
+  updated_at:
+    type: string
+    format: timestamp
 required:
   - id
   - name

@@ -1,0 +1,30 @@
+title: DepreciationLine
+type: object
+properties:
+  id:
+    type: string
+  asset:
+    $ref: ./Asset.v1.yaml
+  name:
+    type: string
+  amount:
+    type: string
+  depreciation_date:
+    type: string
+    format: date
+  remaining_value:
+    type: number
+  depreciated_value:
+    type: number
+  created_at:
+    type: string
+    format: timestamp
+  updated_at:
+    type: string
+    format: timestamp
+required:
+  - name
+  - amount
+  - depreciation_date
+  - remaining_value
+  - depreciated_value

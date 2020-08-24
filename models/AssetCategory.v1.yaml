@@ -1,0 +1,33 @@
+title: AssetCategory
+type: object
+properties:
+  id:
+    type: string
+  asset:
+    $ref: ./Asset.v1.yaml
+  method_time:
+    type: string
+    format: date
+  method_period:
+    type: integer
+    format: int64
+  note:
+    type: string
+  method:
+    type: string
+  name:
+    type: string
+  company:
+    $ref: ./Company.v1.yaml
+  partner:
+    $ref: ./Partner.v1.yaml
+  created_at:
+    type: string
+    format: timestamp
+  updated_at:
+    type: string
+    format: timestamp
+required:
+  - method_time
+  - method_period
+  - method

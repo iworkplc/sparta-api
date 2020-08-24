@@ -1,0 +1,32 @@
+title: BankStatement
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  balance_start:
+    type: number
+  balance_end:
+    type: number
+  state:
+    type: string
+  date:
+    type: string
+    format: date
+  created_at:
+    type: string
+    format: timestamp
+  updated_at:
+    type: string
+    format: timestamp
+  company:
+    $ref: ./Company.v1.yaml
+  journal:
+    $ref: ./Journal.v1.yaml
+  period:
+    $ref: ./Period.v1.yaml
+required:
+  - name
+  - balance_start
+  - balance_end
