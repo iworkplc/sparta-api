@@ -1,0 +1,24 @@
+title: Transaction
+type: object
+properties:
+  id:
+    type: integer
+  company:
+    $ref: ./Company.v1.yaml
+  name:
+    type: string
+  source:
+    type: string
+  state:
+    type: string
+  journal:
+    $ref: ./Journal.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+x-tags:
+  - Transaction
+description: ''

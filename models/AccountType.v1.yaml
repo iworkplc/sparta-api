@@ -1,0 +1,23 @@
+title: AccountType
+type: object
+properties:
+  id:
+    type: integer
+  report_type:
+    type: string
+  close_method:
+    type: string
+  name:
+    type: string
+  code:
+    type: integer
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  company:
+    $ref: ./Company.v1.yaml
+x-tags:
+  - Account Type
