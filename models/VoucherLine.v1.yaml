@@ -1,0 +1,26 @@
+title: VoucherLine
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  date:
+    type: string
+    format: date-time
+  due_date:
+    type: string
+    format: date-time
+  state:
+    type: string
+  reference:
+    type: string
+  name:
+    type: string
+  amount:
+    type: number
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
