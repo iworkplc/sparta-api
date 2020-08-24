@@ -1,0 +1,76 @@
+openapi: 3.0.0
+info:
+  title: Countries Api
+  version: '1.0'
+  license:
+    name: MIT
+  description: Manage country lists.
+servers:
+  - url: 'http://localhost:3000'
+    description: Dev
+paths:
+  /countries:
+    get:
+      summary: List Countries
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/Country.v1.yaml
+      operationId: get-countries
+    post:
+      summary: Create Country
+      tags: []
+      responses: {}
+      operationId: post-countries
+  '/countries/{countryId}':
+    parameters:
+      - schema:
+          type: string
+        name: countryId
+        in: path
+        required: true
+    get:
+      summary: Get Country
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  code:
+                    type: string
+                  created_at:
+                    type: string
+                    format: date-time
+                  updated_at:
+                    type: string
+                    format: date-time
+                required:
+                  - id
+                  - name
+      operationId: get-countries-countryId
+    put:
+      summary: Update Country
+      tags: []
+      responses: {}
+      operationId: put-countries-countryId
+    delete:
+      summary: Remove Country
+      tags: []
+      responses: {}
+      operationId: delete-countries-countryId
+components:
+  schemas: {}
