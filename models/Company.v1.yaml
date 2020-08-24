@@ -1,0 +1,27 @@
+title: Company
+type: object
+x-tags:
+  - company
+properties:
+  id:
+    type: integer
+    minimum: 0
+  name:
+    type: string
+    minLength: 5
+    maxLength: 255
+  email:
+    type: string
+    format: email
+  logo:
+    type: string
+  city:
+    type: string
+  sub_city:
+    type: string
+  street:
+    type: string
+required:
+  - id
+  - name
+  - email

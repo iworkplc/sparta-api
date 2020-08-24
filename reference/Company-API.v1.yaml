@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: Company API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /companies:
+    get:
+      summary: List Companies
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Company.v1.yaml
+      operationId: get-companies
+    post:
+      summary: Create Company
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Company.v1.yaml
+        '400':
+          description: Bad Request
+      operationId: post-companies
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Company.v1.yaml
+  '/companies/{companyId}':
+    parameters:
+      - schema:
+          type: integer
+        name: companyId
+        in: path
+        required: true
+    put:
+      summary: Upadate Company
+      tags:
+        - comany
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Company.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-companies-companyId
+    delete:
+      summary: Remove Company
+      tags:
+        - comany
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ''
+        '404':
+          description: Not Found
+      operationId: delete-companies-companyId
+    get:
+      summary: Get Company
+      tags:
+        - comany
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Company.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-companies-companyId
+      description: ''
+components:
+  schemas: {}
