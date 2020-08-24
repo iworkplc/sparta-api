@@ -23,8 +23,17 @@ properties:
   woreda:
     type: string
   country:
-    type: string
+    $ref: ./Country.v1.yaml
   state:
-    type: string
+    $ref: './State.v1.yaml'
   company:
     $ref: ./Company.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+required:
+  - bic
+  - name

@@ -4,15 +4,17 @@ properties:
   id:
     type: integer
     format: int64
-  # invoice:
-  #     $ref: '#/definitions/Invoice'
   name:
     type: string
   note:
     type: string
   created_at:
     type: string
-    format: timestamp
+    format: date-time
   updated_at:
     type: string
-    format: timestamp
+    format: date-time
+  invoice:
+    $ref: ./Invoice.v1.yaml
+required:
+  - name

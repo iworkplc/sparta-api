@@ -26,3 +26,10 @@ properties:
     format: date-time
   company:
     $ref: ./Company.v1.yaml
+  voucher:
+    $ref: ./Voucher.v1.yaml
+required:
+  - date
+  - due_date
+  - state
+  - amount

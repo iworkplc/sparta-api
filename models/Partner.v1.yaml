@@ -12,6 +12,7 @@ properties:
     type: number
   email:
     type: string
+    format: email
   type:
     type: string
   tin_number:
@@ -23,5 +24,15 @@ properties:
     type: string
   wereda:
     type: string
-  # company: reference of company
-    
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  company:
+    $ref: ./Company.v1.yaml
+required:
+  - name
+  - debit_limit
+  - type

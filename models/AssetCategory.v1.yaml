@@ -23,10 +23,10 @@ properties:
     $ref: ./Partner.v1.yaml
   created_at:
     type: string
-    format: timestamp
+    format: date-time
   updated_at:
     type: string
-    format: timestamp
+    format: date-time
 required:
   - method_time
   - method_period

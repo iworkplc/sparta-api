@@ -18,3 +18,14 @@ properties:
     type: string
   company:
     $ref: ./Company.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+required:
+  - start_date
+  - end_date
+  - name
+  - state

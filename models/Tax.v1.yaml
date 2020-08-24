@@ -15,10 +15,10 @@ properties:
     type: string
   created_at:
     type: string
-    format: date
+    format: date-time
   updated_at:
     type: string
-    format: timestamp
+    format: date-time
   tax_code:
     $ref: ./TaxCode.v1.yaml
   company:

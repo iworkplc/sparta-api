@@ -25,3 +25,8 @@ properties:
     format: date-time
   company:
     $ref: ./Company.v1.yaml
+required:
+  - name
+  - price_subtotal
+  - quantity
+  - unit_price

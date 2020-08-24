@@ -16,10 +16,10 @@ properties:
     format: date
   created_at:
     type: string
-    format: timestamp
+    format: date-time
   updated_at:
     type: string
-    format: timestamp
+    format: date-time
   company:
     $ref: ./Company.v1.yaml
   journal:

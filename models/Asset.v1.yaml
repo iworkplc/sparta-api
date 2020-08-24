@@ -37,3 +37,16 @@ properties:
     format: int64
   company:
     $ref: ./Company.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+required:
+  - method_start_date
+  - method_end_date
+  - state
+  - name
+  - purchase_value
+  - method_period

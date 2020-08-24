@@ -9,10 +9,10 @@ properties:
     type: string
   created_at:
     type: string
-    format: date
+    format: date-time
   updated_at:
     type: string
-    format: date
+    format: date-time
   company:
     $ref: ./Company.v1.yaml
 required:

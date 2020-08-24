@@ -12,9 +12,13 @@ properties:
     type: string
   value:
     type: string
-  created_at:
+  ccreated_at:
     type: string
-    format: timestamp
+    format: date-time
   updated_at:
     type: string
-    format: timestamp
+    format: date-time
+required:
+  - from
+  - to
+  - value

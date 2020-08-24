@@ -19,10 +19,10 @@ properties:
     type: number
   created_at:
     type: string
-    format: timestamp
+    format: date-time
   updated_at:
     type: string
-    format: timestamp
+    format: date-time
   currency:
     $ref: /Currency.v1.yaml
   tax:
@@ -40,4 +40,3 @@ required:
   - due_date
   - name
   - amount
-description: ''

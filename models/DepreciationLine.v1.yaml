@@ -18,10 +18,10 @@ properties:
     type: number
   created_at:
     type: string
-    format: timestamp
+    format: date-time
   updated_at:
     type: string
-    format: timestamp
+    format: date-time
 required:
   - name
   - amount

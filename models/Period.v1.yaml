@@ -5,7 +5,7 @@ properties:
     type: integer
   fiscal_year_id:
     type: integer
-  state: 
+  state:
     type: string
   name:
     type: string
@@ -13,7 +13,16 @@ properties:
     type: string
   start_date:
     type: string
-  # company:
-  #   $ref: '#/definitions/Company'
-  # fiscal_year:
-  #   $ref: '#/definitions/Period'
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+  company:
+    $ref: ./Company.v1.yaml
+  fisical_year:
+    $ref: ./FiscalYear.v1.yaml
+required:
+  - state
+  - name
