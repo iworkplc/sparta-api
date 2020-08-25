@@ -1,0 +1,8 @@
+title: BadRequest
+type: object
+x-examples:
+  example-1: {}
+properties:
+  message:
+    type: string
+    default: Error has occured. 400

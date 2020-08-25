@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  title: TrialBalanceReport
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /trial-balace-reports:
+    get:
+      summary: Fetchs all trial balance reports
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/TrialBalanceReport.v1.yaml
+      operationId: get-trial-balace-reports
+      description: Gets all trial balance reports
+    post:
+      summary: ''
+      operationId: post-trial-balace-reports
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/TrialBalanceReport.v1.yaml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/TrialBalanceReport.v1.yaml
+  '/trial-balace-reports/{12}':
+    parameters:
+      - schema:
+          type: string
+        name: '12'
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/TrialBalanceReport.v1.yaml
+      operationId: get-trial-balace-reports-id
+components:
+  schemas: {}

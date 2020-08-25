@@ -34,3 +34,9 @@ properties:
     $ref: ./Currency.v1.yaml
   bank_account:
     $ref: ./BankAccount.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time

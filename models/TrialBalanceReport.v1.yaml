@@ -32,3 +32,7 @@ properties:
   updated_at:
     type: string
     format: date-time
+  journal:
+    $ref: ./Journal.v1.yaml
+  fiscal_year:
+    $ref: ./FiscalYear.v1.yaml

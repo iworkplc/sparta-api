@@ -1,15 +1,14 @@
 openapi: 3.0.0
 info:
-  title: Voucher API
+  title: VoucherLineAPI
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'
 paths:
   /voucher-lines:
     get:
-      summary: Fetchs all voucher lines
-      tags:
-        - voucher-line
+      summary: Gets all voucher lines
+      tags: []
       responses:
         '200':
           description: OK
@@ -30,12 +29,28 @@ paths:
             application/json:
               schema:
                 $ref: ../../models/VoucherLine.v1.yaml
-      description: Create a voucher line
       requestBody:
         content:
           application/json:
             schema:
-              type: object
-              properties: {}
+              $ref: ../../models/VoucherLine.v1.yaml
+  '/voucher-lines/{12}':
+    parameters:
+      - schema:
+          type: string
+        name: '12'
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/VoucherLine.v1.yaml
+      operationId: get-voucher-lines-id
 components:
   schemas: {}
