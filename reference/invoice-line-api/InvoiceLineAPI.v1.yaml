@@ -45,7 +45,8 @@ paths:
         required: true
     get:
       summary: Your GET endpoint
-      tags: []
+      tags:
+        - Invoice LIne
       responses:
         '200':
           description: OK
@@ -66,6 +67,8 @@ paths:
               schema:
                 $ref: ../../models/InvoiceLine.v1.yaml
       description: Update Invoice line
+      tags:
+        - Invoice LIne
     delete:
       summary: ''
       operationId: delete-invoice-lines-id

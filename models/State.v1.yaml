@@ -1,0 +1,12 @@
+title: State
+type: object
+x-tags:
+  - State
+properties:
+  id:
+    type: integer
+  code:
+    type: string
+  name:
+    type: string
+description: ''

@@ -8,7 +8,8 @@ paths:
   /invoice-taxes:
     get:
       summary: Fetches all invoice taxes
-      tags: []
+      tags:
+        - Invoice Tax
       responses:
         '200':
           description: OK
@@ -46,7 +47,8 @@ paths:
         required: true
     get:
       summary: Get single invoice tax
-      tags: []
+      tags:
+        - Invoice Tax
       responses:
         '200':
           description: OK

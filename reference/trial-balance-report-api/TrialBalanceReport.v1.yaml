@@ -8,7 +8,8 @@ paths:
   /trial-balace-reports:
     get:
       summary: Fetchs all trial balance reports
-      tags: []
+      tags:
+        - Trial Balance Report
       responses:
         '200':
           description: OK
@@ -80,5 +81,7 @@ paths:
           application/json:
             schema:
               $ref: ../../models/TrialBalanceReport.v1.yaml
+      tags:
+        - Trial Balance Report
 components:
   schemas: {}
