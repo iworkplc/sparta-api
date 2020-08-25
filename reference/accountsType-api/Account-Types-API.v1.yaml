@@ -2,13 +2,15 @@ openapi: 3.0.0
 info:
   title: Accounts Type API
   version: '1.0'
+  description: Manage account type list.
 servers:
   - url: 'http://localhost:3000'
 paths:
   /account-types:
     get:
       summary: Get Account Types
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -21,7 +23,8 @@ paths:
       operationId: get-account-types
     post:
       summary: Create Account Type
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -46,7 +49,8 @@ paths:
         required: true
     get:
       summary: Get Account Type
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -59,7 +63,8 @@ paths:
       operationId: get-account-types-accountTypeId
     put:
       summary: Update Account Type
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -79,6 +84,8 @@ paths:
               $ref: ../../models/AccountType.v1.yaml
     delete:
       summary: Remove Account Type
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -91,7 +98,5 @@ paths:
         '404':
           description: Not Found
       operationId: delete-account-types-accountTypeId
-      tags:
-        - Account Types API
 components:
   schemas: {}
