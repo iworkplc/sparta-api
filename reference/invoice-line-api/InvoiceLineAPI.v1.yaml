@@ -36,12 +36,46 @@ paths:
           application/json:
             schema:
               $ref: ../../models/InvoiceLine.v1.yaml
-  /invoice-lines/12:
-    parameters: []
+  '/invoice-lines/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
     get:
       summary: Your GET endpoint
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Invoice.v1.yaml
       operationId: get-invoice-lines-id
+      description: Gets single invoice line
+    put:
+      summary: ''
+      operationId: put-invoice-lines-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/InvoiceLine.v1.yaml
+      description: Update Invoice line
+    delete:
+      summary: ''
+      operationId: delete-invoice-lines-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/InvoiceLine.v1.yaml
+      description: Remove Invoice line
 components:
   schemas: {}

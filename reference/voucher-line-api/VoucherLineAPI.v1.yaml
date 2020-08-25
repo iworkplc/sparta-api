@@ -52,5 +52,31 @@ paths:
               schema:
                 $ref: ../../models/VoucherLine.v1.yaml
       operationId: get-voucher-lines-id
+    put:
+      summary: ''
+      operationId: put-voucher-lines-12
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/VoucherLine.v1.yaml
+      description: Update voucher line
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/VoucherLine.v1.yaml
+    delete:
+      summary: ''
+      operationId: delete-voucher-lines-12
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/VoucherLine.v1.yaml
 components:
   schemas: {}
