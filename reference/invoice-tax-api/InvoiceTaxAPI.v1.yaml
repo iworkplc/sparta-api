@@ -1,0 +1,88 @@
+openapi: 3.0.0
+info:
+  title: InvoiceTaxAPI
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /invoice-taxes:
+    get:
+      summary: Fetches all invoice taxes
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: get-invoice-taxes
+      description: Gets all invoice taxes
+    post:
+      summary: Create invoice tax
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: post-invoice-taxes
+      description: Create invoice tax
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/InvoiceTax.v1.yaml
+  '/invoice-tax/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Get single invoice tax
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: get-invoice-tax-id
+      description: Gets single invoice tax
+    put:
+      summary: Update invoice tax
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: put-invoice-tax-id
+      description: Updates single invoice tax
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/InvoiceTax.v1.yaml
+    delete:
+      summary: Remove invoice tax
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: delete-invoice-tax-id
+components:
+  schemas: {}
