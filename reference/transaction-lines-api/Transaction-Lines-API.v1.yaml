@@ -15,7 +15,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/TransactionLine.v1.yaml
+                $ref: ../../models/TransactionLine.v1.yaml
       operationId: get-transaction-lines
       description: Get List of Transaction Line
     post:
@@ -27,7 +27,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/TransactionLine.v1.yaml
+                $ref: ../../models/TransactionLine.v1.yaml
         '400':
           description: Bad Request
       operationId: post-transaction-lines
@@ -36,7 +36,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/TransactionLine.v1.yaml
+              $ref: ../../models/TransactionLine.v1.yaml
   '/transaction-lines/{transactionLineId}':
     parameters:
       - schema:
@@ -53,7 +53,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/TransactionLine.v1.yaml
+                $ref: ../../models/TransactionLine.v1.yaml
         '404':
           description: Not Found
       operationId: get-transaction-lines-transactionLineId
@@ -67,7 +67,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/TransactionLine.v1.yaml
+                $ref: ../../models/TransactionLine.v1.yaml
         '400':
           description: Bad Request
         '404':
@@ -78,7 +78,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/TransactionLine.v1.yaml
+              $ref: ../../models/TransactionLine.v1.yaml
     delete:
       summary: Remove Transaction Line
       tags: []
@@ -88,7 +88,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/TransactionLine.v1.yaml
+                $ref: ../../models/TransactionLine.v1.yaml
         '404':
           description: Not Found
       operationId: delete-transaction-lines-transactionLineId
