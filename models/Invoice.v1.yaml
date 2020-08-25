@@ -1,0 +1,36 @@
+title: Invoice
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  source_document_origin:
+    type: string
+  total_amount:
+    type: number
+  reconciled:
+    type: string
+  type:
+    type: string
+  supplier_invoice_number:
+    type: integer
+  due_date:
+    type: string
+    format: date
+  amount_untaxed:
+    type: number
+  invoice_number:
+    type: integer
+  invoice_state:
+    type: string
+  invoice_date:
+    type: string
+    format: date
+  partner:
+    $ref: ./Partner.v1.yaml
+  company:
+    $ref: ./Company.v1.yaml
+  currency:
+    $ref: ./Currency.v1.yaml
+  bank_account:
+    $ref: ./BankAccount.v1.yaml

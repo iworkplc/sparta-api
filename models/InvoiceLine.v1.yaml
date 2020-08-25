@@ -25,6 +25,8 @@ properties:
     format: date-time
   company:
     $ref: ./Company.v1.yaml
+  partner:
+    $ref: ./Partner.v1.yaml
 required:
   - name
   - price_subtotal

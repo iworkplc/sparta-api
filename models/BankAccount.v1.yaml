@@ -1,37 +1,28 @@
-title: VoucherLine
+title: BankAccount
 type: object
 properties:
   id:
     type: integer
     format: int64
-  date:
+  account_number:
+    type: integer
+  bank_bic:
     type: string
-    format: date-time
-  due_date:
+  owner_name:
     type: string
-    format: date-time
+  bank_name:
+    type: string
   state:
     type: string
-  reference:
-    type: string
-  name:
-    type: string
-  amount:
-    type: number
   created_at:
     type: string
     format: date-time
   updated_at:
     type: string
     format: date-time
+  bank:
+    $ref: ./Bank.v1.yaml
+  partner:
+    $ref: ./Partner.v1.yaml
   company:
     $ref: ./Company.v1.yaml
-  voucher:
-    $ref: ./Voucher.v1.yaml
-  account:
-    $ref: ''
-required:
-  - date
-  - due_date
-  - state
-  - amount
