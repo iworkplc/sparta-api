@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  title: Accounts API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /accounts:
+    get:
+      summary: Get Accounts
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/Account.v1.yaml
+      operationId: get-accounts
+    post:
+      summary: Create Account
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Account.v1.yaml
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+      operationId: post-accounts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Account.v1.yaml
+  '/accounts/{accountId}':
+    parameters:
+      - schema:
+          type: string
+        name: accountId
+        in: path
+        required: true
+    get:
+      summary: Get Account
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Account.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-accounts-accountId
+    put:
+      summary: Update Account
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Account.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-accounts-accountId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Account.v1.yaml
+    delete:
+      summary: Remove Account
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Account.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-accounts-accountId
+components:
+  schemas: {}

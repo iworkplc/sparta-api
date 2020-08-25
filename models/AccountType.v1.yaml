@@ -1,8 +1,12 @@
 title: AccountType
 type: object
+x-tags:
+  - Account Type
+description: ''
 properties:
   id:
     type: integer
+    default: 0
   report_type:
     type: string
   close_method:
@@ -19,5 +23,7 @@ properties:
     format: date-time
   company:
     $ref: ./Company.v1.yaml
-x-tags:
-  - Account Type
+required:
+  - id
+  - close_method
+  - name

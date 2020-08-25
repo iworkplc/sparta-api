@@ -31,3 +31,4 @@ required:
   - id
   - name
   - is_active
+description: ''

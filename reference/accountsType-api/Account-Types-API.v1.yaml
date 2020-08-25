@@ -1,13 +1,13 @@
 openapi: 3.0.0
 info:
-  title: Company API
+  title: Accounts Type API
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /companies:
+  /account-types:
     get:
-      summary: List Companies
+      summary: Get Account Types
       tags: []
       responses:
         '200':
@@ -17,10 +17,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../models/Company.v1.yaml
-      operationId: get-companies
+                  $ref: ../../models/AccountType.v1.yaml
+      operationId: get-account-types
     post:
-      summary: Create Company
+      summary: Create Account Type
       tags: []
       responses:
         '200':
@@ -28,66 +28,70 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Company.v1.yaml
+                $ref: ../../models/AccountType.v1.yaml
         '400':
           description: Bad Request
-      operationId: post-companies
+      operationId: post-account-types
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../models/Company.v1.yaml
-  '/companies/{companyId}':
+              $ref: ../../models/AccountType.v1.yaml
+  '/account-types/{accountTypeId}':
     parameters:
       - schema:
-          type: integer
-        name: companyId
+          type: string
+        name: accountTypeId
         in: path
         required: true
-    put:
-      summary: Upadate Company
-      tags:
-        - comany
+    get:
+      summary: Get Account Type
+      tags: []
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: ../models/Company.v1.yaml
+                $ref: ../../models/AccountType.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-account-types-accountTypeId
+    put:
+      summary: Update Account Type
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/AccountType.v1.yaml
         '400':
           description: Bad Request
         '404':
           description: Not Found
-      operationId: put-companies-companyId
+      operationId: put-account-types-accountTypeId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/AccountType.v1.yaml
     delete:
-      summary: Remove Company
-      tags:
-        - comany
+      summary: Remove Account Type
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: ''
+                $ref: ../../models/AccountType.v1.yaml
+        '400':
+          description: Bad Request
         '404':
           description: Not Found
-      operationId: delete-companies-companyId
-    get:
-      summary: Get Company
+      operationId: delete-account-types-accountTypeId
       tags:
-        - comany
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../models/Company.v1.yaml
-        '404':
-          description: Not Found
-      operationId: get-companies-companyId
-      description: ''
+        - Account Types API
 components:
   schemas: {}
