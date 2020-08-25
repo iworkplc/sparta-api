@@ -1,13 +1,13 @@
 openapi: 3.0.0
 info:
-  title: VoucherLineAPI
+  title: InvoiceTaxAPI
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /voucher-lines:
+  /invoice-taxes:
     get:
-      summary: Gets all voucher lines
+      summary: Fetches all invoice taxes
       tags: []
       responses:
         '200':
@@ -17,32 +17,11 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../../models/VoucherLine.v1.yaml
-      operationId: get-voucher-lines
+                  $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: get-invoice-taxes
+      description: Gets all invoice taxes
     post:
-      summary: ''
-      operationId: post-voucher-lines
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../../models/VoucherLine.v1.yaml
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ../../models/VoucherLine.v1.yaml
-  '/voucher-lines/{12}':
-    parameters:
-      - schema:
-          type: string
-        name: '12'
-        in: path
-        required: true
-    get:
-      summary: Your GET endpoint
+      summary: Create invoice tax
       tags: []
       responses:
         '200':
@@ -50,33 +29,60 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/VoucherLine.v1.yaml
-      operationId: get-voucher-lines-id
-    put:
-      summary: ''
-      operationId: put-voucher-lines-12
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../../models/VoucherLine.v1.yaml
-      description: Update voucher line
+                $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: post-invoice-taxes
+      description: Create invoice tax
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/VoucherLine.v1.yaml
-    delete:
-      summary: ''
-      operationId: delete-voucher-lines-12
+              $ref: ../../models/InvoiceTax.v1.yaml
+  '/invoice-tax/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Get single invoice tax
+      tags: []
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: ../../models/VoucherLine.v1.yaml
+                $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: get-invoice-tax-id
+      description: Gets single invoice tax
+    put:
+      summary: Update invoice tax
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: put-invoice-tax-id
+      description: Updates single invoice tax
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/InvoiceTax.v1.yaml
+    delete:
+      summary: Remove invoice tax
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/InvoiceTax.v1.yaml
+      operationId: delete-invoice-tax-id
 components:
   schemas: {}

@@ -53,6 +53,32 @@ paths:
               schema:
                 $ref: ../../models/TrialBalanceReport.v1.yaml
       operationId: get-trial-balace-reports-id
-      description: ''
+      description: Gets single trial balance report
+    delete:
+      summary: ''
+      operationId: delete-trial-balace-reports-12
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/TrialBalanceReport.v1.yaml
+      description: Remove trial balance report
+    put:
+      summary: ''
+      operationId: put-trial-balace-reports-12
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/TrialBalanceReport.v1.yaml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/TrialBalanceReport.v1.yaml
 components:
   schemas: {}

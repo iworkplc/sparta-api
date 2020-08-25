@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  title: GeneralLedgerReport
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /general-ledger-reports:
+    get:
+      summary: Fetches all general ledger reports
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/GeneralLedgerReport.v1.yaml
+      operationId: get-general-ledger-report
+      description: Gets all general ledger reports
+    post:
+      summary: Create general ledger reports
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/GeneralLedgerReport.v1.yaml
+      operationId: post-general-ledger-report
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/GeneralLedgerReport.v1.yaml
+    parameters: []
+  '/general-ledger-reports/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Get single general ledger report
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/GeneralLedgerReport.v1.yaml
+      operationId: get-general-ledger-reports-id
+      description: Gets single general ledger report
+    put:
+      summary: Update general ledger report
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/GeneralJournalReport.v1.yaml
+      operationId: put-general-ledger-reports-id
+      description: Update general ledger report
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/GeneralLedgerReport.v1.yaml
+    delete:
+      summary: Remove general ledger report
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/GeneralLedgerReport.v1.yaml
+      operationId: delete-general-ledger-reports-id
+      description: Remove general ledger report
+components:
+  schemas: {}
