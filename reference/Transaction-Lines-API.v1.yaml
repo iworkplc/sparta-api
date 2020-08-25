@@ -1,0 +1,97 @@
+openapi: 3.0.0
+info:
+  title: Transaction Lines API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /transaction-lines:
+    get:
+      summary: Get Transaction Lines
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/TransactionLine.v1.yaml
+      operationId: get-transaction-lines
+      description: Get List of Transaction Line
+    post:
+      summary: Create Transaction Line
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/TransactionLine.v1.yaml
+        '400':
+          description: Bad Request
+      operationId: post-transaction-lines
+      description: Create Transaction Line
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/TransactionLine.v1.yaml
+  '/transaction-lines/{transactionLineId}':
+    parameters:
+      - schema:
+          type: string
+        name: transactionLineId
+        in: path
+        required: true
+    get:
+      summary: Get Transaction Line
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/TransactionLine.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-transaction-lines-transactionLineId
+      description: Get a Transaction Line
+    put:
+      summary: Update Transaction Line
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/TransactionLine.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-transaction-lines-transactionLineId
+      description: Update a transaction line
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/TransactionLine.v1.yaml
+    delete:
+      summary: Remove Transaction Line
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/TransactionLine.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-transaction-lines-transactionLineId
+      description: Remove a tranasaction line by id
+components:
+  schemas: {}

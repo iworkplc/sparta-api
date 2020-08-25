@@ -1,0 +1,97 @@
+openapi: 3.0.0
+info:
+  title: Journals API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /journals:
+    get:
+      summary: Get Journals
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/Journal.v1.yaml
+      operationId: get-journals
+      description: Get list of Journal
+    post:
+      summary: Create Journal
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Journal.v1.yaml
+        '400':
+          description: Bad Request
+      operationId: post-journals
+      description: Create a Journal.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Journal.v1.yaml
+  '/journals/{journalId}':
+    parameters:
+      - schema:
+          type: string
+        name: journalId
+        in: path
+        required: true
+    get:
+      summary: Get Journal
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Journal.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-journals-journalId
+      description: Get a Journal.
+    put:
+      summary: Update Journal
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Journal.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-journals-journalId
+      description: Update a Journal.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Journal.v1.yaml
+    delete:
+      summary: Remove Journal
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Journal.v1.yaml
+      operationId: delete-journals-journalId
+      description: Remove a journal.
+components:
+  schemas: {}
