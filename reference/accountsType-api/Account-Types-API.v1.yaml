@@ -1,0 +1,97 @@
+openapi: 3.0.0
+info:
+  title: Accounts Type API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /account-types:
+    get:
+      summary: Get Account Types
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/AccountType.v1.yaml
+      operationId: get-account-types
+    post:
+      summary: Create Account Type
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/AccountType.v1.yaml
+        '400':
+          description: Bad Request
+      operationId: post-account-types
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/AccountType.v1.yaml
+  '/account-types/{accountTypeId}':
+    parameters:
+      - schema:
+          type: string
+        name: accountTypeId
+        in: path
+        required: true
+    get:
+      summary: Get Account Type
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/AccountType.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-account-types-accountTypeId
+    put:
+      summary: Update Account Type
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/AccountType.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-account-types-accountTypeId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/AccountType.v1.yaml
+    delete:
+      summary: Remove Account Type
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/AccountType.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: delete-account-types-accountTypeId
+      tags:
+        - Account Types API
+components:
+  schemas: {}
