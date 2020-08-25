@@ -53,5 +53,6 @@ paths:
               schema:
                 $ref: ../../models/TrialBalanceReport.v1.yaml
       operationId: get-trial-balace-reports-id
+      description: ''
 components:
   schemas: {}
