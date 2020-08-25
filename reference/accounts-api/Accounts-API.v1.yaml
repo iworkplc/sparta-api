@@ -20,9 +20,12 @@ paths:
                   $ref: ../../models/Account.v1.yaml
       operationId: get-accounts
       description: Get Accounts
+      tags:
+        - Endpoints
     post:
       summary: Create Account
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -50,7 +53,8 @@ paths:
         required: true
     get:
       summary: Get Account
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -64,7 +68,8 @@ paths:
       description: Get Account
     put:
       summary: Update Account
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -85,7 +90,8 @@ paths:
       description: Update Account
     delete:
       summary: Remove Account
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK

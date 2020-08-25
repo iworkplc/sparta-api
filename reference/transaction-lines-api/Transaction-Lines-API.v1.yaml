@@ -8,7 +8,8 @@ paths:
   /transaction-lines:
     get:
       summary: Get Transaction Lines
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -20,7 +21,8 @@ paths:
       description: Get List of Transaction Line
     post:
       summary: Create Transaction Line
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -46,7 +48,8 @@ paths:
         required: true
     get:
       summary: Get Transaction Line
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -60,7 +63,8 @@ paths:
       description: Get a Transaction Line
     put:
       summary: Update Transaction Line
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -81,7 +85,8 @@ paths:
               $ref: ../../models/TransactionLine.v1.yaml
     delete:
       summary: Remove Transaction Line
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK

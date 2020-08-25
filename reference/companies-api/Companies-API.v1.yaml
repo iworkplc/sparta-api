@@ -9,7 +9,8 @@ paths:
   /companies:
     get:
       summary: List Companies
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -22,7 +23,8 @@ paths:
       operationId: get-companies
     post:
       summary: Create Company
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -47,8 +49,6 @@ paths:
         required: true
     put:
       summary: Upadate Company
-      tags:
-        - comany
       responses:
         '200':
           description: OK
@@ -66,10 +66,10 @@ paths:
           application/json:
             schema:
               $ref: ../../models/Company.v1.yaml
+      tags:
+        - Endpoints
     delete:
       summary: Remove Company
-      tags:
-        - comany
       responses:
         '200':
           description: OK
@@ -80,10 +80,10 @@ paths:
         '404':
           description: Not Found
       operationId: delete-companies-companyId
+      tags:
+        - Endpoints
     get:
       summary: Get Company
-      tags:
-        - comany
       responses:
         '200':
           description: OK
@@ -95,5 +95,7 @@ paths:
           description: Not Found
       operationId: get-companies-companyId
       description: ''
+      tags:
+        - Endpoints
 components:
   schemas: {}

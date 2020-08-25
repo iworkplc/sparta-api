@@ -9,7 +9,7 @@ paths:
     get:
       summary: Gets all voucher lines
       tags:
-        - Voucher Line
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -36,6 +36,8 @@ paths:
           application/json:
             schema:
               $ref: ../../models/VoucherLine.v1.yaml
+      tags:
+        - Endpoints
   '/voucher-lines/{12}':
     parameters:
       - schema:
@@ -46,7 +48,7 @@ paths:
     get:
       summary: Your GET endpoint
       tags:
-        - Voucher Line
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -71,6 +73,8 @@ paths:
           application/json:
             schema:
               $ref: ../../models/VoucherLine.v1.yaml
+      tags:
+        - Endpoints
     delete:
       summary: ''
       operationId: delete-voucher-lines-12
@@ -81,5 +85,7 @@ paths:
             application/json:
               schema:
                 $ref: ../../models/VoucherLine.v1.yaml
+      tags:
+        - Endpoints
 components:
   schemas: {}

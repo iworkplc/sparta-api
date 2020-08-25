@@ -2,14 +2,13 @@ openapi: 3.0.0
 info:
   title: InvoiceTaxAPI
   version: '1.0'
+  description: ''
 servers:
   - url: 'http://localhost:3000'
 paths:
   /invoice-taxes:
     get:
       summary: Fetches all invoice taxes
-      tags:
-        - Invoice Tax
       responses:
         '200':
           description: OK
@@ -21,9 +20,12 @@ paths:
                   $ref: ../../models/InvoiceTax.v1.yaml
       operationId: get-invoice-taxes
       description: Gets all invoice taxes
+      tags:
+        - Endpoints
     post:
       summary: Create invoice tax
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
