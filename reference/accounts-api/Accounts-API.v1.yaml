@@ -2,13 +2,13 @@ openapi: 3.0.0
 info:
   title: Accounts API
   version: '1.0'
+  description: Manage Account List.
 servers:
   - url: 'http://localhost:3000'
 paths:
   /accounts:
     get:
       summary: Get Accounts
-      tags: []
       responses:
         '200':
           description: OK
@@ -19,6 +19,7 @@ paths:
                 items:
                   $ref: ../../models/Account.v1.yaml
       operationId: get-accounts
+      description: Get Accounts
     post:
       summary: Create Account
       tags: []
@@ -39,6 +40,7 @@ paths:
           application/json:
             schema:
               $ref: ../../models/Account.v1.yaml
+      description: Create Account
   '/accounts/{accountId}':
     parameters:
       - schema:
@@ -59,6 +61,7 @@ paths:
         '404':
           description: Not Found
       operationId: get-accounts-accountId
+      description: Get Account
     put:
       summary: Update Account
       tags: []
@@ -79,6 +82,7 @@ paths:
           application/json:
             schema:
               $ref: ../../models/Account.v1.yaml
+      description: Update Account
     delete:
       summary: Remove Account
       tags: []
@@ -92,5 +96,6 @@ paths:
         '404':
           description: Not Found
       operationId: delete-accounts-accountId
+      description: Delete Account
 components:
   schemas: {}

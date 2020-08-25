@@ -4,7 +4,6 @@ description: ''
 properties:
   id:
     type: integer
-    format: int64
   charts_of_account:
     type: string
   filtered_by:

@@ -3,7 +3,6 @@ type: object
 properties:
   id:
     type: integer
-    format: int64
   payment_term:
     $ref: ./PaymentTerm.v1.yaml
   from:
