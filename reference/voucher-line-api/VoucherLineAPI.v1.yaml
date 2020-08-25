@@ -8,7 +8,8 @@ paths:
   /voucher-lines:
     get:
       summary: Gets all voucher lines
-      tags: []
+      tags:
+        - Voucher Line
       responses:
         '200':
           description: OK
@@ -19,6 +20,7 @@ paths:
                 items:
                   $ref: ../../models/VoucherLine.v1.yaml
       operationId: get-voucher-lines
+      description: ''
     post:
       summary: ''
       operationId: post-voucher-lines
@@ -43,7 +45,8 @@ paths:
         required: true
     get:
       summary: Your GET endpoint
-      tags: []
+      tags:
+        - Voucher Line
       responses:
         '200':
           description: OK
