@@ -1,0 +1,92 @@
+openapi: 3.0.0
+info:
+  title: Transaction API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /transactions:
+    post:
+      summary: Create Transaction
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Transaction.v1.yaml
+        '400':
+          description: Bad Request
+      operationId: post-transactions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Transaction.v1.yaml
+    get:
+      summary: Get Transactions
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/Transaction.v1.yaml
+      operationId: get-transactions
+  '/transaction/{transactionId}':
+    parameters:
+      - schema:
+          type: string
+        name: transactionId
+        in: path
+        required: true
+    put:
+      summary: Update Transaction
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Transaction.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-transaction-transactionId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Transaction.v1.yaml
+    get:
+      summary: Get Transaction
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Transaction.v1.yaml
+      operationId: get-transaction-transactionId
+    delete:
+      summary: Remove Transaction
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Transaction.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-transaction-transactionId
+components:
+  schemas: {}
