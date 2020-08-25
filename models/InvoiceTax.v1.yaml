@@ -18,6 +18,10 @@ properties:
     format: date-time
   company:
     $ref: ./Company.v1.yaml
+  tax_code:
+    $ref: ./TaxCode.v1.yaml
+  account:
+    $ref: ./Account.v1.yaml
 required:
   - base_amount
   - tax_amount
