@@ -18,7 +18,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../models/Company.v1.yaml
+                  $ref: ../../models/Company.v1.yaml
       operationId: get-companies
     post:
       summary: Create Company
@@ -29,7 +29,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Company.v1.yaml
+                $ref: ../../models/Company.v1.yaml
         '400':
           description: Bad Request
       operationId: post-companies
@@ -37,7 +37,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/Company.v1.yaml
+              $ref: ../../models/Company.v1.yaml
   '/companies/{companyId}':
     parameters:
       - schema:
@@ -55,12 +55,17 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Company.v1.yaml
+                $ref: ../../models/Company.v1.yaml
         '400':
           description: Bad Request
         '404':
           description: Not Found
       operationId: put-companies-companyId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Company.v1.yaml
     delete:
       summary: Remove Company
       tags:
@@ -71,7 +76,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ''
+                $ref: ../../models/Company.v1.yaml
         '404':
           description: Not Found
       operationId: delete-companies-companyId
@@ -85,7 +90,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Company.v1.yaml
+                $ref: ../../models/Company.v1.yaml
         '404':
           description: Not Found
       operationId: get-companies-companyId
