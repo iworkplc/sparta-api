@@ -8,7 +8,8 @@ paths:
   /general-ledger-reports:
     get:
       summary: Fetches all general ledger reports
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -22,7 +23,8 @@ paths:
       description: Gets all general ledger reports
     post:
       summary: Create general ledger reports
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -46,7 +48,8 @@ paths:
         required: true
     get:
       summary: Get single general ledger report
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -58,7 +61,8 @@ paths:
       description: Gets single general ledger report
     put:
       summary: Update general ledger report
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -75,7 +79,8 @@ paths:
               $ref: ../../models/GeneralLedgerReport.v1.yaml
     delete:
       summary: Remove general ledger report
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK

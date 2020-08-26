@@ -49,8 +49,6 @@ paths:
         required: true
     get:
       summary: Get single invoice tax
-      tags:
-        - Invoice Tax
       responses:
         '200':
           description: OK
@@ -60,9 +58,12 @@ paths:
                 $ref: ../../models/InvoiceTax.v1.yaml
       operationId: get-invoice-tax-id
       description: Gets single invoice tax
+      tags:
+        - Endpoints
     put:
       summary: Update invoice tax
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -79,7 +80,8 @@ paths:
               $ref: ../../models/InvoiceTax.v1.yaml
     delete:
       summary: Remove invoice tax
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
