@@ -12,8 +12,6 @@ paths:
   /invoices:
     get:
       summary: Fetches all invoices
-      tags:
-        - Invoice
       responses:
         '200':
           description: OK
@@ -25,10 +23,10 @@ paths:
                   $ref: ../../models/Invoice.v1.yaml
       operationId: get-invoices
       description: Gets all invoices
+      tags:
+        - Endpoints
     post:
       summary: Create invoice
-      tags:
-        - Invoice
       responses:
         '200':
           description: OK
@@ -38,6 +36,8 @@ paths:
                 $ref: ../../models/Invoice.v1.yaml
       operationId: post-invoices
       description: Create an invoice
+      tags:
+        - Endpoints
   '/invoices/{id}':
     parameters:
       - schema:
@@ -47,8 +47,6 @@ paths:
         required: true
     get:
       summary: Your GET endpoint
-      tags:
-        - Invoice
       responses:
         '200':
           description: OK
@@ -58,6 +56,8 @@ paths:
                 $ref: ../../models/Invoice.v1.yaml
       operationId: get-invoices-id
       description: Get single invoice
+      tags:
+        - Endpoints
     put:
       summary: ''
       tags:
@@ -76,6 +76,8 @@ paths:
           application/json:
             schema:
               $ref: ../../models/Invoice.v1.yaml
+      tags:
+        - Endpoints
     delete:
       summary: ''
       tags:

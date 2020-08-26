@@ -1,17 +1,16 @@
 openapi: 3.0.0
 info:
-  title: Accounts API
+  title: Partner
   version: '1.0'
-  description: Manage Account List.
-  contact: iwork sparta team
+  description: Manage list of partners.
+  license:
+    name: MIT
 servers:
   - url: 'http://localhost:3000'
-tags:
-  - 
 paths:
-  /accounts:
+  /partners:
     get:
-      summary: Get Accounts
+      summary: Get partners
       responses:
         '200':
           description: OK
@@ -20,13 +19,13 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../../models/Account.v1.yaml
-      operationId: get-accounts
-      description: Get Accounts
+                  $ref: ../../models/Partner.v1.yaml
+      operationId: get-partner
+      description: Get a list of partners
       tags:
         - Endpoints
     post:
-      summary: Create Account
+      summary: Create Partner
       tags:
         - Endpoints
       responses:
@@ -35,27 +34,28 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/Partner.v1.yaml
         '400':
           description: Bad Request
         '403':
           description: Forbidden
-      operationId: post-accounts
+      operationId: post-Partners
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/Account.v1.yaml
-      description: Create Account
-  '/accounts/{accountId}':
+              $ref: ../../models/Partner.v1.yaml
+        description: ''
+      description: Create a partner
+  '/partners/{partnerId}':
     parameters:
       - schema:
           type: string
-        name: accountId
+        name: partnerId
         in: path
         required: true
     get:
-      summary: Get Account
+      summary: Get Partner
       tags:
         - Endpoints
       responses:
@@ -64,13 +64,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/Partner.v1.yaml
         '404':
           description: Not Found
-      operationId: get-accounts-accountId
-      description: Get Account
+      operationId: get-Partners-PartnerId
+      description: Get a partner
     put:
-      summary: Update Account
+      summary: Update Partner
       tags:
         - Endpoints
       responses:
@@ -79,20 +79,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/Partner.v1.yaml
         '400':
           description: Bad Request
         '404':
           description: Not Found
-      operationId: put-accounts-accountId
+      operationId: put-Partners-PartnerId
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/Account.v1.yaml
-      description: Update Account
+              $ref: ../../models/Partner.v1.yaml
+      description: Update a Partner
     delete:
-      summary: Remove Account
+      summary: Remove Partner
       tags:
         - Endpoints
       responses:
@@ -101,23 +101,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/Partner.v1.yaml
         '404':
           description: Not Found
-      operationId: delete-accounts-accountId
-      description: Delete Account
-  /banks:
-    get:
-      summary: 'Get Banks '
-      tags:
-        - Endpoints
-      responses: {}
-      operationId: get-banks
-    post:
-      summary: Create Bank
-      tags:
-        - Endpoints
-      responses: {}
-      operationId: post-banks
+      operationId: delete-Partners-partnerId
+      description: Delete a Partner
 components:
   schemas: {}

@@ -1,17 +1,14 @@
 openapi: 3.0.0
 info:
-  title: Accounts API
+  title: Asset
   version: '1.0'
-  description: Manage Account List.
-  contact: iwork sparta team
+  description: Manage Assets list.
 servers:
   - url: 'http://localhost:3000'
-tags:
-  - 
 paths:
-  /accounts:
+  /assets:
     get:
-      summary: Get Accounts
+      summary: Get partners
       responses:
         '200':
           description: OK
@@ -20,13 +17,13 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../../models/Account.v1.yaml
-      operationId: get-accounts
-      description: Get Accounts
+                  $ref: ../../models/Asset.v1.yaml
+      operationId: get-assets
+      description: get a list of an assets
       tags:
         - Endpoints
     post:
-      summary: Create Account
+      summary: Create Partner
       tags:
         - Endpoints
       responses:
@@ -35,27 +32,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/Asset.v1.yaml
         '400':
           description: Bad Request
         '403':
           description: Forbidden
-      operationId: post-accounts
+      operationId: post-Partners
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/Account.v1.yaml
-      description: Create Account
-  '/accounts/{accountId}':
+              $ref: ../../models/Asset.v1.yaml
+        description: ''
+      description: Create an asset
+    parameters: []
+  '/assets/{assetId}':
     parameters:
       - schema:
           type: string
-        name: accountId
+        name: assetId
         in: path
         required: true
     get:
-      summary: Get Account
+      summary: Get Partner
       tags:
         - Endpoints
       responses:
@@ -64,13 +63,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/Asset.v1.yaml
         '404':
           description: Not Found
-      operationId: get-accounts-accountId
-      description: Get Account
+      operationId: get-assets-assetId
+      description: Get an asset
     put:
-      summary: Update Account
+      summary: Update Partner
       tags:
         - Endpoints
       responses:
@@ -79,20 +78,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/Asset.v1.yaml
         '400':
           description: Bad Request
         '404':
           description: Not Found
-      operationId: put-accounts-accountId
+      operationId: put-Partners-PartnerId
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/Account.v1.yaml
-      description: Update Account
+              $ref: ../../models/Asset.v1.yaml
+      description: Update an asset
     delete:
-      summary: Remove Account
+      summary: Remove Partner
       tags:
         - Endpoints
       responses:
@@ -101,23 +100,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/Asset.v1.yaml
         '404':
           description: Not Found
-      operationId: delete-accounts-accountId
-      description: Delete Account
-  /banks:
-    get:
-      summary: 'Get Banks '
-      tags:
-        - Endpoints
-      responses: {}
-      operationId: get-banks
-    post:
-      summary: Create Bank
-      tags:
-        - Endpoints
-      responses: {}
-      operationId: post-banks
+      operationId: delete-Partners-partnerId
+      description: Delete an asset.
 components:
   schemas: {}

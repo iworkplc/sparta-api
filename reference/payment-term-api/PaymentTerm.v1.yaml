@@ -1,17 +1,13 @@
 openapi: 3.0.0
 info:
-  title: Accounts API
+  title: PaymentTerm
   version: '1.0'
-  description: Manage Account List.
-  contact: iwork sparta team
 servers:
   - url: 'http://localhost:3000'
-tags:
-  - 
 paths:
-  /accounts:
+  /payment_terms:
     get:
-      summary: Get Accounts
+      summary: Get PaymentTerm
       responses:
         '200':
           description: OK
@@ -20,13 +16,13 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../../models/Account.v1.yaml
-      operationId: get-accounts
-      description: Get Accounts
+                  $ref: ../../models/PaymentTerm.v1.yaml
+      operationId: get-paymentTerm
+      description: Get paymentTerm
       tags:
         - Endpoints
     post:
-      summary: Create Account
+      summary: Create paymentTerm
       tags:
         - Endpoints
       responses:
@@ -35,27 +31,27 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/PaymentTerm.v1.yaml
         '400':
           description: Bad Request
         '403':
           description: Forbidden
-      operationId: post-accounts
+      operationId: post-PaymentTerm
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/Account.v1.yaml
-      description: Create Account
-  '/accounts/{accountId}':
+              $ref: ../../models/PaymentTerm.v1.yaml
+      description: Create partner
+  '/payment_terms/{payment_term_id}':
     parameters:
       - schema:
           type: string
-        name: accountId
+        name: payment_term_id
         in: path
         required: true
     get:
-      summary: Get Account
+      summary: Get paymentTerm
       tags:
         - Endpoints
       responses:
@@ -64,13 +60,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/PaymentTerm.v1.yaml
         '404':
           description: Not Found
-      operationId: get-accounts-accountId
-      description: Get Account
+      operationId: get-PaymentTerm-paymentTermId
+      description: Get paymentTerm
     put:
-      summary: Update Account
+      summary: Update paymentTerm
       tags:
         - Endpoints
       responses:
@@ -79,20 +75,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/PaymentTerm.v1.yaml
         '400':
           description: Bad Request
         '404':
           description: Not Found
-      operationId: put-accounts-accountId
+      operationId: put-PaymentTermLine-paymentTermId
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/Account.v1.yaml
-      description: Update Account
+              $ref: ../../models/PaymentTerm.v1.yaml
+      description: Update paymentTerm
     delete:
-      summary: Remove Account
+      summary: Remove paymentTerm
       tags:
         - Endpoints
       responses:
@@ -101,23 +97,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/PaymentTerm.v1.yaml
         '404':
           description: Not Found
-      operationId: delete-accounts-accountId
-      description: Delete Account
-  /banks:
-    get:
-      summary: 'Get Banks '
-      tags:
-        - Endpoints
-      responses: {}
-      operationId: get-banks
-    post:
-      summary: Create Bank
-      tags:
-        - Endpoints
-      responses: {}
-      operationId: post-banks
+      operationId: delete-PaymentTermLine-paymentTermId
+      description: Delete Partner
 components:
   schemas: {}

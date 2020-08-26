@@ -1,17 +1,13 @@
 openapi: 3.0.0
 info:
-  title: InvoiceTaxAPI
+  title: Period
   version: '1.0'
-  description: invoice tax api
-  contact: iwork sparta-team
 servers:
   - url: 'http://localhost:3000'
-tags:
-  - 
 paths:
-  /invoice-taxes:
+  /periods:
     get:
-      summary: Fetches all invoice taxes
+      summary: Get Period
       responses:
         '200':
           description: OK
@@ -20,13 +16,13 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../../models/InvoiceTax.v1.yaml
-      operationId: get-invoice-taxes
-      description: Gets all invoice taxes
+                  $ref: ../../models/Period.v1.yaml
+      operationId: get-period
+      description: Get Period
       tags:
         - Endpoints
     post:
-      summary: Create invoice tax
+      summary: Create Period
       tags:
         - Endpoints
       responses:
@@ -35,36 +31,42 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/InvoiceTax.v1.yaml
-      operationId: post-invoice-taxes
-      description: Create invoice tax
+                $ref: ../../models/Period.v1.yaml
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+      operationId: post-period
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/InvoiceTax.v1.yaml
-  '/invoice-tax/{id}':
+              $ref: ../../models/Period.v1.yaml
+      description: Create Period
+  '/periods/{periodId}':
     parameters:
       - schema:
           type: string
-        name: id
+        name: periodId
         in: path
         required: true
     get:
-      summary: Get single invoice tax
+      summary: Get period
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: ../../models/InvoiceTax.v1.yaml
-      operationId: get-invoice-tax-id
-      description: Gets single invoice tax
-      tags:
-        - Endpoints
+                $ref: ../../models/Period.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-periods-periodId
+      description: Get Period
     put:
-      summary: Update invoice tax
+      summary: Update Period
       tags:
         - Endpoints
       responses:
@@ -73,16 +75,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/InvoiceTax.v1.yaml
-      operationId: put-invoice-tax-id
-      description: Updates single invoice tax
+                $ref: ../../models/Period.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-Period-periodId
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/InvoiceTax.v1.yaml
+              $ref: ../../models/Period.v1.yaml
+      description: Update Period
     delete:
-      summary: Remove invoice tax
+      summary: Remove Period
       tags:
         - Endpoints
       responses:
@@ -91,8 +97,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/InvoiceTax.v1.yaml
-      operationId: delete-invoice-tax-id
-      description: Delete invoice tax
+                $ref: ../../models/Period.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-Period-periodId
+      description: Delete Period
 components:
   schemas: {}

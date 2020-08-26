@@ -1,17 +1,15 @@
 openapi: 3.0.0
 info:
-  title: Accounts API
+  title: Fiscal Years API
   version: '1.0'
-  description: Manage Account List.
-  contact: iwork sparta team
 servers:
   - url: 'http://localhost:3000'
-tags:
-  - 
 paths:
-  /accounts:
+  /fiscal-years:
     get:
-      summary: Get Accounts
+      summary: Get Fiscal Years
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -20,13 +18,11 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../../models/Account.v1.yaml
-      operationId: get-accounts
-      description: Get Accounts
-      tags:
-        - Endpoints
+                  $ref: ../../models/FiscalYear.v1.yaml
+      operationId: get-fiscal-years
+      description: Get a list of fiscal years
     post:
-      summary: Create Account
+      summary: Create Fiscal Year
       tags:
         - Endpoints
       responses:
@@ -35,27 +31,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/FiscalYear.v1.yaml
         '400':
           description: Bad Request
-        '403':
-          description: Forbidden
-      operationId: post-accounts
+      operationId: post-fiscal-years
+      description: Creat a fiscal year
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/Account.v1.yaml
-      description: Create Account
-  '/accounts/{accountId}':
+              $ref: ../../models/FiscalYear.v1.yaml
+  '/fiscal-years/{fiscalYearId}':
     parameters:
       - schema:
           type: string
-        name: accountId
+        name: fiscalYearId
         in: path
         required: true
     get:
-      summary: Get Account
+      summary: Get Fiscal Year
       tags:
         - Endpoints
       responses:
@@ -64,13 +58,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/FiscalYear.v1.yaml
         '404':
           description: Not Found
-      operationId: get-accounts-accountId
-      description: Get Account
+      operationId: get-fiscal-years-fiscalYearId
+      description: Get a Fiscal Year.
     put:
-      summary: Update Account
+      summary: Update Fiscal Year
       tags:
         - Endpoints
       responses:
@@ -79,20 +73,23 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/FiscalYear.v1.yaml
         '400':
           description: Bad Request
         '404':
           description: Not Found
-      operationId: put-accounts-accountId
+      operationId: put-fiscal-years-fiscalYearId
+      description: Update a fiscal year.
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../../models/Account.v1.yaml
-      description: Update Account
+              $ref: ../../models/FiscalYear.v1.yaml
+          application/xml:
+            schema:
+              $ref: ../../models/FiscalYear.v1.yaml
     delete:
-      summary: Remove Account
+      summary: Remove Fiscal Year
       tags:
         - Endpoints
       responses:
@@ -101,23 +98,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../../models/Account.v1.yaml
+                $ref: ../../models/FiscalYear.v1.yaml
         '404':
           description: Not Found
-      operationId: delete-accounts-accountId
-      description: Delete Account
-  /banks:
-    get:
-      summary: 'Get Banks '
-      tags:
-        - Endpoints
-      responses: {}
-      operationId: get-banks
-    post:
-      summary: Create Bank
-      tags:
-        - Endpoints
-      responses: {}
-      operationId: post-banks
+      operationId: delete-fiscal-years-fiscalYearId
+      description: Remove a fiscal year.
 components:
   schemas: {}

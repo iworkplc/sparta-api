@@ -12,7 +12,8 @@ paths:
   /general-journal-reports:
     post:
       summary: Create General Journal Report
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '201':
           description: Created
@@ -31,7 +32,8 @@ paths:
               $ref: ../../models/GeneralJournalReport.v1.yaml
     get:
       summary: Get General Journal Reports
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -52,7 +54,8 @@ paths:
         required: true
     get:
       summary: Get General Journal Report
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -64,7 +67,8 @@ paths:
       description: Get a General Journal Report
     delete:
       summary: Remove General Journal Report
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -78,7 +82,8 @@ paths:
       description: Remove a General Journal Report
     put:
       summary: Update General Journal Report
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
