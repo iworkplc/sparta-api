@@ -8,7 +8,8 @@ paths:
   /journals:
     get:
       summary: Get Journals
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -22,7 +23,8 @@ paths:
       description: Get list of Journal
     post:
       summary: Create Journal
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -48,7 +50,8 @@ paths:
         required: true
     get:
       summary: Get Journal
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -62,7 +65,8 @@ paths:
       description: Get a Journal.
     put:
       summary: Update Journal
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -83,7 +87,8 @@ paths:
               $ref: ../../models/Journal.v1.yaml
     delete:
       summary: Remove Journal
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
