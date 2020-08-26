@@ -1,0 +1,108 @@
+openapi: 3.0.0
+info:
+  title: Partner
+  version: '1.0'
+  description: ''
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /partners:
+    get:
+      summary: Get partners
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Partner.v1.yaml
+      operationId: get-partner
+      description: Get partner
+      tags:
+        - Endpoints
+    post:
+      summary: Create Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Partner.v1.yaml
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+      operationId: post-Partners
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Partner.v1.yaml
+        description: ''
+      description: Create partner
+  '/partners/{partnerId}':
+    parameters:
+      - schema:
+          type: string
+        name: partnerId
+        in: path
+        required: true
+    get:
+      summary: Get Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Period.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-Partners-PartnerId
+      description: Get Partner
+    put:
+      summary: Update Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Partner.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-Partners-PartnerId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Partner.v1.yaml
+      description: Update Partner
+    delete:
+      summary: Remove Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Partner.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-Partners-partnerId
+      description: Delete Partner
+components:
+  schemas: {}

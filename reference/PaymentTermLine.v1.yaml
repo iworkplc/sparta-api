@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title: PaymentTermLine
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /paymentTermLines:
+    get:
+      summary: Get PaymentTermLine
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/PaymentTermLine.v1.yaml
+      operationId: get-partner
+      description: Get partner
+      tags:
+        - Endpoints
+    post:
+      summary: Create Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PaymentTermLine.v1.yaml
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+      operationId: post-PaymentTermLine
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PaymentTermLine.v1.yaml
+        description: ''
+      description: Create partner
+  '/paymentTermLines/{partnerId}':
+    parameters:
+      - schema:
+          type: string
+        name: partnerId
+        in: path
+        required: true
+    get:
+      summary: Get Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PaymentTermLine.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-PaymentTermLine-PartnerId
+      description: Get Partner
+    put:
+      summary: Update Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PaymentTermLine.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-PaymentTermLine-PartnerId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PaymentTermLine.v1.yaml
+      description: Update Partner
+    delete:
+      summary: Remove Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PaymentTermLine.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-PaymentTermLine-partnerId
+      description: Delete Partner
+components:
+  schemas: {}

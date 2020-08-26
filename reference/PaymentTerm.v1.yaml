@@ -1,0 +1,106 @@
+openapi: 3.0.0
+info:
+  title: PaymentTerm
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /payment_terms:
+    get:
+      summary: Get PaymentTerm
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/PaymentTerm.v1.yaml
+      operationId: get-paymentTerm
+      description: Get paymentTerm
+      tags:
+        - Endpoints
+    post:
+      summary: Create paymentTerm
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PaymentTerm.v1.yaml
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+      operationId: post-PaymentTerm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PaymentTerm.v1.yaml
+      description: Create partner
+  '/payment_terms/{payment_term_id}':
+    parameters:
+      - schema:
+          type: string
+        name: payment_term_id
+        in: path
+        required: true
+    get:
+      summary: Get paymentTerm
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PaymentTerm.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-PaymentTerm-paymentTermId
+      description: Get paymentTerm
+    put:
+      summary: Update paymentTerm
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PaymentTerm.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-PaymentTermLine-paymentTermId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/PaymentTerm.v1.yaml
+      description: Update paymentTerm
+    delete:
+      summary: Remove paymentTerm
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/PaymentTerm.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-PaymentTermLine-paymentTermId
+      description: Delete Partner
+components:
+  schemas: {}
