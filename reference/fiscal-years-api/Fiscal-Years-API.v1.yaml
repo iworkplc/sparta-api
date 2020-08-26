@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title: Fiscal Years API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /fiscal-years:
+    get:
+      summary: Get Fiscal Years
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/FiscalYear.v1.yaml
+      operationId: get-fiscal-years
+      description: Get a list of fiscal years
+    post:
+      summary: Create Fiscal Year
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/FiscalYear.v1.yaml
+        '400':
+          description: Bad Request
+      operationId: post-fiscal-years
+      description: Creat a fiscal year
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/FiscalYear.v1.yaml
+  '/fiscal-years/{fiscalYearId}':
+    parameters:
+      - schema:
+          type: string
+        name: fiscalYearId
+        in: path
+        required: true
+    get:
+      summary: Get Fiscal Year
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/FiscalYear.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-fiscal-years-fiscalYearId
+      description: Get a Fiscal Year.
+    put:
+      summary: Update Fiscal Year
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/FiscalYear.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-fiscal-years-fiscalYearId
+      description: Update a fiscal year.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/FiscalYear.v1.yaml
+          application/xml:
+            schema:
+              $ref: ../../models/FiscalYear.v1.yaml
+    delete:
+      summary: Remove Fiscal Year
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/FiscalYear.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-fiscal-years-fiscalYearId
+      description: Remove a fiscal year.
+components:
+  schemas: {}
