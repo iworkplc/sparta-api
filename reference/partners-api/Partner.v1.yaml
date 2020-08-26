@@ -2,7 +2,9 @@ openapi: 3.0.0
 info:
   title: Partner
   version: '1.0'
-  description: ''
+  description: Manage list of partners.
+  license:
+    name: MIT
 servers:
   - url: 'http://localhost:3000'
 paths:
@@ -17,9 +19,9 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../models/Partner.v1.yaml
+                  $ref: ../../models/Partner.v1.yaml
       operationId: get-partner
-      description: Get partner
+      description: Get a list of partners
       tags:
         - Endpoints
     post:
@@ -32,7 +34,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Partner.v1.yaml
+                $ref: ../../models/Partner.v1.yaml
         '400':
           description: Bad Request
         '403':
@@ -42,9 +44,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/Partner.v1.yaml
+              $ref: ../../models/Partner.v1.yaml
         description: ''
-      description: Create partner
+      description: Create a partner
   '/partners/{partnerId}':
     parameters:
       - schema:
@@ -62,11 +64,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Period.v1.yaml
+                $ref: ../../models/Partner.v1.yaml
         '404':
           description: Not Found
       operationId: get-Partners-PartnerId
-      description: Get Partner
+      description: Get a partner
     put:
       summary: Update Partner
       tags:
@@ -77,7 +79,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Partner.v1.yaml
+                $ref: ../../models/Partner.v1.yaml
         '400':
           description: Bad Request
         '404':
@@ -87,8 +89,8 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/Partner.v1.yaml
-      description: Update Partner
+              $ref: ../../models/Partner.v1.yaml
+      description: Update a Partner
     delete:
       summary: Remove Partner
       tags:
@@ -99,10 +101,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Partner.v1.yaml
+                $ref: ../../models/Partner.v1.yaml
         '404':
           description: Not Found
       operationId: delete-Partners-partnerId
-      description: Delete Partner
+      description: Delete a Partner
 components:
   schemas: {}

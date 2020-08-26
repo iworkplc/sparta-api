@@ -103,5 +103,18 @@ paths:
           description: Not Found
       operationId: delete-accounts-accountId
       description: Delete Account
+  /banks:
+    get:
+      summary: 'Get Banks '
+      tags:
+        - Endpoints
+      responses: {}
+      operationId: get-banks
+    post:
+      summary: Create Bank
+      tags:
+        - Endpoints
+      responses: {}
+      operationId: post-banks
 components:
   schemas: {}
