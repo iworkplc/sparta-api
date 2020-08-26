@@ -1,13 +1,13 @@
 openapi: 3.0.0
 info:
-  title: PaymentTerm
+  title: PaymentTermLine
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /payment_terms:
+  /paymentTermLines:
     get:
-      summary: Get PaymentTerm
+      summary: Get PaymentTermLine
       responses:
         '200':
           description: OK
@@ -16,13 +16,13 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../models/PaymentTerm.v1.yaml
-      operationId: get-paymentTerm
-      description: Get paymentTerm
+                  $ref: ../../models/PaymentTermLine.v1.yaml
+      operationId: get-partner
+      description: Get partner
       tags:
         - Endpoints
     post:
-      summary: Create paymentTerm
+      summary: Create Partner
       tags:
         - Endpoints
       responses:
@@ -31,27 +31,28 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/PaymentTerm.v1.yaml
+                $ref: ../../models/PaymentTermLine.v1.yaml
         '400':
           description: Bad Request
         '403':
           description: Forbidden
-      operationId: post-PaymentTerm
+      operationId: post-PaymentTermLine
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../models/PaymentTerm.v1.yaml
+              $ref: ../../models/PaymentTermLine.v1.yaml
+        description: ''
       description: Create partner
-  '/payment_terms/{payment_term_id}':
+  '/paymentTermLines/{partnerId}':
     parameters:
       - schema:
           type: string
-        name: payment_term_id
+        name: partnerId
         in: path
         required: true
     get:
-      summary: Get paymentTerm
+      summary: Get Partner
       tags:
         - Endpoints
       responses:
@@ -60,13 +61,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/PaymentTerm.v1.yaml
+                $ref: ../../models/PaymentTermLine.v1.yaml
         '404':
           description: Not Found
-      operationId: get-PaymentTerm-paymentTermId
-      description: Get paymentTerm
+      operationId: get-PaymentTermLine-PartnerId
+      description: Get Partner
     put:
-      summary: Update paymentTerm
+      summary: Update Partner
       tags:
         - Endpoints
       responses:
@@ -75,20 +76,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/PaymentTerm.v1.yaml
+                $ref: ../../models/PaymentTermLine.v1.yaml
         '400':
           description: Bad Request
         '404':
           description: Not Found
-      operationId: put-PaymentTermLine-paymentTermId
+      operationId: put-PaymentTermLine-PartnerId
       requestBody:
         content:
           application/json:
             schema:
-              $ref: ../models/PaymentTerm.v1.yaml
-      description: Update paymentTerm
+              $ref: ../../models/PaymentTermLine.v1.yaml
+      description: Update Partner
     delete:
-      summary: Remove paymentTerm
+      summary: Remove Partner
       tags:
         - Endpoints
       responses:
@@ -97,10 +98,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/PaymentTerm.v1.yaml
+                $ref: ../../models/PaymentTermLine.v1.yaml
         '404':
           description: Not Found
-      operationId: delete-PaymentTermLine-paymentTermId
+      operationId: delete-PaymentTermLine-partnerId
       description: Delete Partner
 components:
   schemas: {}

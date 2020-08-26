@@ -16,7 +16,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: ../models/Period.v1.yaml
+                  $ref: ../../models/Period.v1.yaml
       operationId: get-period
       description: Get Period
       tags:
@@ -31,7 +31,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Period.v1.yaml
+                $ref: ../../models/Period.v1.yaml
         '400':
           description: Bad Request
         '403':
@@ -41,7 +41,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/Period.v1.yaml
+              $ref: ../../models/Period.v1.yaml
       description: Create Period
   '/periods/{periodId}':
     parameters:
@@ -60,7 +60,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Period.v1.yaml
+                $ref: ../../models/Period.v1.yaml
         '404':
           description: Not Found
       operationId: get-periods-periodId
@@ -75,7 +75,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Period.v1.yaml
+                $ref: ../../models/Period.v1.yaml
         '400':
           description: Bad Request
         '404':
@@ -85,7 +85,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ../models/Period.v1.yaml
+              $ref: ../../models/Period.v1.yaml
       description: Update Period
     delete:
       summary: Remove Period
@@ -97,7 +97,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Period.v1.yaml
+                $ref: ../../models/Period.v1.yaml
         '404':
           description: Not Found
       operationId: delete-Period-periodId
