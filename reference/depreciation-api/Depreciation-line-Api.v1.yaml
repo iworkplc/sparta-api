@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Depreciation-Api.v1
+  version: '1.0'
+  description: depreciation line api
+  contact: iwork sparta-team
+servers:
+  - url: 'http://localhost:3000'
+tags:
+  - 
+paths:
+  '/depreciation-lines/{assetId}':
+    parameters:
+      - schema:
+          type: string
+        name: assetId
+        in: path
+        required: true
+    get:
+      summary: Get one depreciation-line with assetid
+      tags:
+        - Depreciation-line
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/DepreciationLine.v1.yaml
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      operationId: get-depreciation-lines-assetId
+      description: Get single depreciation line for an asset with assetId
+components:
+  schemas: {}

@@ -3,8 +3,11 @@ info:
   title: Accounts API
   version: '1.0'
   description: Manage Account List.
+  contact: iwork sparta team
 servers:
   - url: 'http://localhost:3000'
+tags:
+  - 
 paths:
   /accounts:
     get:

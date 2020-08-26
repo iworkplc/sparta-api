@@ -2,8 +2,12 @@ openapi: 3.0.0
 info:
   title: Invoice API
   version: '1.0'
+  description: invoicing api
+  contact: iwork sparta-team
 servers:
   - url: 'http://localhost:3000'
+tags:
+  - 
 paths:
   /invoices:
     get:
@@ -56,6 +60,8 @@ paths:
       description: Get single invoice
     put:
       summary: ''
+      tags:
+        - Invoice
       operationId: put-invoices-id
       responses:
         '200':
@@ -72,6 +78,8 @@ paths:
               $ref: ../../models/Invoice.v1.yaml
     delete:
       summary: ''
+      tags:
+        - Invoice
       operationId: delete-invoices-id
       responses:
         '200':
@@ -80,6 +88,6 @@ paths:
             application/json:
               schema:
                 $ref: ../../models/Invoice.v1.yaml
-      description: ''
+      description: delete invoice
 components:
   schemas: {}

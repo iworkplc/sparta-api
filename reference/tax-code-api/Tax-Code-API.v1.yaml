@@ -1,0 +1,118 @@
+openapi: 3.0.0
+info:
+  title: Tax-Code-API.v1
+  version: '1.0'
+  description: tax-code api
+  contact: iwork sparta team
+servers:
+  - url: 'http://localhost:3000'
+tags: 
+  - 
+paths:
+  /tax-codes:
+    get:
+      summary: Get tax-code collections
+      tags:
+        - Tax-Code
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/TaxCode.v1.yaml
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      operationId: get-tax-codes
+      description: Get all tax-codes
+    post:
+      summary: Add new tax-codes
+      tags:
+        - Tax-Code
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/TaxCode.v1.yaml
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      operationId: post-tax-codes
+      description: Add new tax-code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/TaxCode.v1.yaml
+  '/tax-codes/{tax-codeId}':
+    parameters:
+      - schema:
+          type: string
+        name: tax-codeId
+        in: path
+        required: true
+    get:
+      summary: Get a tax-code
+      tags:
+        - Tax-Code
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/TaxCode.v1.yaml
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      operationId: get-tax-codes-codeId
+      description: Get single tax-code
+    put:
+      summary: Update a tax-code
+      tags:
+        - Tax-Code
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/TaxCode.v1.yaml
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      operationId: put-tax-codes-codeId
+      description: Update a tax-code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/TaxCode.v1.yaml
+    delete:
+      summary: Delete a tax-code
+      tags:
+        - Tax-Code
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
+      operationId: delete-tax-codes-codeId
+      description: Delete a tax-code
+components:
+  schemas: {}

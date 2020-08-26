@@ -5,6 +5,9 @@ info:
   license:
     name: MIT
   description: Manage country lists.
+  contact: sparta-team
+tags:
+  - null
 servers:
   - url: 'http://localhost:3000'
     description: Dev
@@ -12,6 +15,7 @@ paths:
   /countries:
     get:
       summary: List Countries
+      description: Get all countries
       tags: []
       responses:
         '200':
@@ -25,9 +29,27 @@ paths:
       operationId: get-countries
     post:
       summary: Create Country
+      description: Add new country
       tags: []
-      responses: {}
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Country.v1.yaml
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
       operationId: post-countries
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Country.v1.yaml
   '/countries/{countryId}':
     parameters:
       - schema:
@@ -61,16 +83,40 @@ paths:
                 required:
                   - id
                   - name
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
       operationId: get-countries-countryId
+      description: Get single country info
     put:
       summary: Update Country
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Country.v1.yaml
       operationId: put-countries-countryId
+      description: update company info
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Country.v1.yaml
     delete:
       summary: Remove Country
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: Not Found
       operationId: delete-countries-countryId
+      description: Delete company
 components:
   schemas: {}
