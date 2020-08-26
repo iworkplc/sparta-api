@@ -1,0 +1,108 @@
+openapi: 3.0.0
+info:
+  title: Asset
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /assets:
+    get:
+      summary: Get partners
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/Asset.v1.yaml
+      operationId: get-assets
+      description: get a list of an assets
+      tags:
+        - Endpoints
+    post:
+      summary: Create Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Asset.v1.yaml
+        '400':
+          description: Bad Request
+        '403':
+          description: Forbidden
+      operationId: post-Partners
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Asset.v1.yaml
+        description: ''
+      description: Create an asset
+    parameters: []
+  '/assets/{assetId}':
+    parameters:
+      - schema:
+          type: string
+        name: assetId
+        in: path
+        required: true
+    get:
+      summary: Get Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Asset.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-assets-assetId
+      description: Get an asset
+    put:
+      summary: Update Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Asset.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-Partners-PartnerId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Asset.v1.yaml
+      description: Update Partner
+    delete:
+      summary: Remove Partner
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Asset.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-Partners-partnerId
+      description: Delete Partner
+components:
+  schemas: {}
