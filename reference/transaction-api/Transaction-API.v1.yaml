@@ -2,8 +2,12 @@ openapi: 3.0.0
 info:
   title: Transaction API
   version: '1.0'
+  description: transaction api
+  contact: iwork sparta-team
 servers:
   - url: 'http://localhost:3000'
+tags:
+  - 
 paths:
   /transactions:
     post:
@@ -20,6 +24,7 @@ paths:
         '400':
           description: Bad Request
       operationId: post-transactions
+      description: Add new transaction
       requestBody:
         content:
           application/json:
@@ -40,6 +45,7 @@ paths:
                 items:
                   $ref: ../../models/Transaction.v1.yaml
       operationId: get-transactions
+      description: Get list of transactions
   '/transaction/{transactionId}':
     parameters:
       - schema:
@@ -63,6 +69,7 @@ paths:
         '404':
           description: Not Found
       operationId: put-transaction-transactionId
+      description: Update transaction
       requestBody:
         content:
           application/json:
@@ -80,7 +87,7 @@ paths:
               schema:
                 $ref: ../../models/Transaction.v1.yaml
       operationId: get-transaction-transactionId
-      description: ''
+      description: Get single transaction
     delete:
       summary: Remove Transaction
       tags:
@@ -95,6 +102,6 @@ paths:
         '404':
           description: Not Found
       operationId: delete-transaction-transactionId
-      description: ''
+      description: delete transaction
 components:
   schemas: {}

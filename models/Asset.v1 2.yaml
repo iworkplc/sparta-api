@@ -1,0 +1,52 @@
+title: Asset
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  method_end:
+    type: string
+  salivage_value:
+    type: number
+  method_start_date:
+    type: string
+    format: date
+  method_end_date:
+    type: string
+    format: date
+  state:
+    type: string
+  name:
+    type: string
+  code:
+    type: integer
+    format: int64
+  purchase_value:
+    type: number
+  is_active:
+    type: boolean
+  note:
+    type: string
+  purchase_date:
+    type: string
+    format: date
+  depre_method:
+    type: string
+  method_period:
+    type: integer
+    format: int64
+  company:
+    $ref: ./Company.v1.yaml
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
+required:
+  - method_start_date
+  - method_end_date
+  - state
+  - name
+  - purchase_value
+  - method_period

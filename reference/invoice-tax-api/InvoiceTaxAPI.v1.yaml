@@ -2,9 +2,12 @@ openapi: 3.0.0
 info:
   title: InvoiceTaxAPI
   version: '1.0'
-  description: ''
+  description: invoice tax api
+  contact: iwork sparta-team
 servers:
   - url: 'http://localhost:3000'
+tags:
+  - 
 paths:
   /invoice-taxes:
     get:
@@ -90,5 +93,6 @@ paths:
               schema:
                 $ref: ../../models/InvoiceTax.v1.yaml
       operationId: delete-invoice-tax-id
+      description: Delete invoice tax
 components:
   schemas: {}

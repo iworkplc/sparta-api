@@ -3,8 +3,11 @@ info:
   title: Companies API
   version: '1.0'
   description: Manage Company List.
+  contact: iwork sparta team
 servers:
   - url: 'http://localhost:3000'
+tags:
+  - 
 paths:
   /companies:
     get:
@@ -21,6 +24,7 @@ paths:
                 items:
                   $ref: ../../models/Company.v1.yaml
       operationId: get-companies
+      description: Get company collection
     post:
       summary: Create Company
       tags:
@@ -35,6 +39,7 @@ paths:
         '400':
           description: Bad Request
       operationId: post-companies
+      description: Add new company
       requestBody:
         content:
           application/json:
@@ -61,6 +66,7 @@ paths:
         '404':
           description: Not Found
       operationId: put-companies-companyId
+      description: Update company
       requestBody:
         content:
           application/json:
@@ -80,6 +86,7 @@ paths:
         '404':
           description: Not Found
       operationId: delete-companies-companyId
+      description: Delete company
       tags:
         - Endpoints
     get:
@@ -94,7 +101,7 @@ paths:
         '404':
           description: Not Found
       operationId: get-companies-companyId
-      description: ''
+      description: Get single company 
       tags:
         - Endpoints
 components:

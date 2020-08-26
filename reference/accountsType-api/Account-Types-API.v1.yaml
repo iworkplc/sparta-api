@@ -3,8 +3,11 @@ info:
   title: Accounts Type API
   version: '1.0'
   description: Manage account type list.
+  contact: iwork sparta team
 servers:
   - url: 'http://localhost:3000'
+tags:
+  - 
 paths:
   /account-types:
     get:
@@ -21,6 +24,7 @@ paths:
                 items:
                   $ref: ../../models/AccountType.v1.yaml
       operationId: get-account-types
+      description: Get account-types
     post:
       summary: Create Account Type
       tags:
@@ -35,6 +39,7 @@ paths:
         '400':
           description: Bad Request
       operationId: post-account-types
+      description: add account-types
       requestBody:
         content:
           application/json:
@@ -61,6 +66,7 @@ paths:
         '404':
           description: Not Found
       operationId: get-account-types-accountTypeId
+      description: Get account-types
     put:
       summary: Update Account Type
       tags:
@@ -77,6 +83,7 @@ paths:
         '404':
           description: Not Found
       operationId: put-account-types-accountTypeId
+      description: update account-types
       requestBody:
         content:
           application/json:
@@ -98,5 +105,6 @@ paths:
         '404':
           description: Not Found
       operationId: delete-account-types-accountTypeId
+      description: delete account-types
 components:
   schemas: {}

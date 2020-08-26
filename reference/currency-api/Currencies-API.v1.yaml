@@ -1,0 +1,233 @@
+openapi: 3.0.0
+info:
+  title: Currencies API
+  version: '1.0'
+  description: currency api
+  contact: iwork sparta-team
+servers:
+  - url: 'http://localhost:3000'
+tags:
+  - 
+paths:
+  /currencies:
+    get:
+      summary: Get all currencies
+      tags:
+        - currencies
+      operationId: get-currencies
+      description: Returns all currencies in the system
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Currency.v1.yaml
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      summary: Add new currency
+      tags:
+        - currencies
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Currency.v1.yaml
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      operationId: post-currencies
+      description: Add new Currency
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Currency.v1.yaml
+  '/currencies/{currencyId}':
+    parameters:
+      - schema:
+          type: string
+        name: currencyId
+        in: path
+        required: true
+    get:
+      summary: Get single currency
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Currency.v1.yaml
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      operationId: get-currencies-currencyId
+      description: Get one currency with currencyId
+    put:
+      summary: Update single currency
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Currency.v1.yaml
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      operationId: put-currencies-currencyId
+      description: Update a currency with currencyId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Currency.v1.yaml
+    delete:
+      summary: Delete single currency
+      tags: []
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+      operationId: delete-currencies-currencyId
+      description: Delete a currency with currencyId
+  '/currencies/{currencyId}/currency-rates':
+    parameters:
+      - schema:
+          type: string
+        name: currencyId
+        in: path
+        required: true
+    get:
+      summary: Get all currency rate for a currency
+      tags:
+        - currency rate
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/CurrencyRate.v1.yaml
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      operationId: get-currencies-currencyId-currency-rates
+      description: Get all currency rates for a given currency
+    post:
+      summary: Add currency rates for a currency
+      tags:
+        - currency rate
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/CurrencyRate.v1.yaml
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      operationId: post-currencies-currencyId-currency-rates
+      description: Add new currency rate for a given currency
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/CurrencyRate.v1.yaml
+  '/currencies/{currencyId}/currency-rates/{rateId}':
+    parameters:
+      - schema:
+          type: string
+        name: currencyId
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: rateId
+        in: path
+        required: true
+    get:
+      summary: Get single currency rate for a currency
+      tags:
+        - currency rate
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/CurrencyRate.v1.yaml
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      operationId: get-currencies-currencyId-currency-rates-rateId
+      description: Get single currency rate give currencyId
+    put:
+      summary: Update single currency rate for a currency
+      tags:
+        - currency rate
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/CurrencyRate.v1.yaml
+        '400':
+          description: Bad Request
+      operationId: put-currencies-currencyId-currency-rates-rateId
+      description: Update a currency rate given the currencyId
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/CurrencyRate.v1.yaml
+    delete:
+      summary: Delete single currency rate with in a currency
+      tags:
+        - currency rate
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+      operationId: delete-currencies-currencyId-currency-rates-rateId
+      description: Delete a currency rate given the currencyId
+components:
+  schemas: {}

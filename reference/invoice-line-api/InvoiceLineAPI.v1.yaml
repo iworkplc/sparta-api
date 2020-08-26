@@ -2,8 +2,12 @@ openapi: 3.0.0
 info:
   title: InvoiceLineAPI
   version: '1.0'
+  description: invoicing line api
+  contact: iwork sparta-team
 servers:
   - url: 'http://localhost:3000'
+tags:
+  - 
 paths:
   /invoice-lines:
     get:
@@ -23,6 +27,8 @@ paths:
         - Endpoints
     post:
       summary: ''
+      tags:
+        - InvoiceLineAPI
       operationId: post-invoice-lines
       responses:
         '200':
@@ -31,6 +37,7 @@ paths:
             application/json:
               schema:
                 $ref: ../../models/InvoiceLine.v1.yaml
+      description:  add new invoice line
       requestBody:
         content:
           application/json:
@@ -73,6 +80,8 @@ paths:
         - Endpoints
     delete:
       summary: ''
+      tags:
+        - InvoiceLineAPI
       operationId: delete-invoice-lines-id
       responses:
         '200':

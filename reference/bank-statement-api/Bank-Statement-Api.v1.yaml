@@ -1,0 +1,122 @@
+openapi: 3.0.0
+info:
+  title: Bank-Statement-Api.v1
+  version: '1.0'
+  description: Bank statement api
+  contact: iwork sparta team
+servers:
+  - url: 'http://localhost:3000'
+tags:
+  - 
+paths:
+  /bank-statements:
+    get:
+      summary: Get bank statement collection
+      tags:
+        - Bank-Statement
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/BankStatement.v1.yaml
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      operationId: get-bank-statements
+      description: Get bank statement collection
+    post:
+      summary: Add new bank statement
+      tags:
+        - Bank-Statement
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/BankStatement.v1.yaml
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      operationId: post-bank-statements
+      description: Add new bank statement
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/BankStatement.v1.yaml
+  '/bank-statements/{statementId}':
+    parameters:
+      - schema:
+          type: string
+        name: statementId
+        in: path
+        required: true
+    get:
+      summary: Get a bank statement
+      tags:
+        - Bank-Statement
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/BankStatement.v1.yaml
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      operationId: get-bank-statements-statementId
+      description: Get sinlge bank statement
+    put:
+      summary: Update a bank statement
+      tags:
+        - Bank-Statement
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/BankStatement.v1.yaml
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      operationId: put-bank-statements-statementId
+      description: Update a bank statement
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/BankStatement.v1.yaml
+    delete:
+      summary: Delete a bank statement
+      tags:
+        - Bank-Statement
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+      operationId: delete-bank-statements-statementId
+      description: Delete a bank statement
+components:
+  schemas: {}

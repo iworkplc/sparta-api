@@ -1,35 +1,7 @@
-title: Company
+title: Company.v1
 type: object
 x-tags:
-  - company
+  - Company
 properties:
   id:
-    type: integer
-    minimum: 0
-  name:
     type: string
-    minLength: 5
-    maxLength: 255
-  email:
-    type: string
-    format: email
-  logo:
-    type: string
-  city:
-    type: string
-  sub_city:
-    type: string
-  street:
-    type: string
-  created_at:
-    type: string
-    format: date-time
-  updated_at:
-    type: string
-    format: date-time
-  country:
-    $ref: ./Country.v1.yaml
-required:
-  - id
-  - name
-  - email
