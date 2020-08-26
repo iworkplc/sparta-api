@@ -2,6 +2,7 @@ openapi: 3.0.0
 info:
   title: Asset
   version: '1.0'
+  description: Manage Assets list.
 servers:
   - url: 'http://localhost:3000'
 paths:
@@ -88,7 +89,7 @@ paths:
           application/json:
             schema:
               $ref: ../../models/Asset.v1.yaml
-      description: Update Partner
+      description: Update an asset
     delete:
       summary: Remove Partner
       tags:
@@ -103,6 +104,6 @@ paths:
         '404':
           description: Not Found
       operationId: delete-Partners-partnerId
-      description: Delete Partner
+      description: Delete an asset.
 components:
   schemas: {}
