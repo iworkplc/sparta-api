@@ -1,0 +1,104 @@
+openapi: 3.0.0
+info:
+  title: Banks API
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/banks/{bankId}':
+    parameters:
+      - schema:
+          type: string
+        name: bankId
+        in: path
+        required: true
+    get:
+      summary: Get Bank
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Bank.v1.yaml
+        '404':
+          description: Not Found
+      operationId: get-banks-bankId
+      description: Get a Bank.
+    put:
+      summary: Update Bank
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Bank.v1.yaml
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+      operationId: put-banks-bankId
+      description: Update a bank.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Bank.v1.yaml
+    delete:
+      summary: Remove Bank
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Bank.v1.yaml
+        '404':
+          description: Not Found
+      operationId: delete-banks-bankId
+      description: Delete a bank.
+  /banks:
+    get:
+      summary: Get Banks
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../../models/Bank.v1.yaml
+      operationId: get-banks
+      description: Get a list of banks
+    post:
+      summary: Create Bank
+      tags:
+        - Endpoints
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../../models/Bank.v1.yaml
+        '400':
+          description: Bad Request
+      operationId: post-banks
+      description: Create a Bank.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../../models/Bank.v1.yaml
+components:
+  schemas: {}
