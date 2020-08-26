@@ -8,7 +8,8 @@ paths:
   /transactions:
     post:
       summary: Create Transaction
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -24,9 +25,11 @@ paths:
           application/json:
             schema:
               $ref: ../../models/Transaction.v1.yaml
+      description: ''
     get:
       summary: Get Transactions
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -46,7 +49,8 @@ paths:
         required: true
     put:
       summary: Update Transaction
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -66,7 +70,8 @@ paths:
               $ref: ../../models/Transaction.v1.yaml
     get:
       summary: Get Transaction
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -75,9 +80,11 @@ paths:
               schema:
                 $ref: ../../models/Transaction.v1.yaml
       operationId: get-transaction-transactionId
+      description: ''
     delete:
       summary: Remove Transaction
-      tags: []
+      tags:
+        - Endpoints
       responses:
         '200':
           description: OK
@@ -88,5 +95,6 @@ paths:
         '404':
           description: Not Found
       operationId: delete-transaction-transactionId
+      description: ''
 components:
   schemas: {}
